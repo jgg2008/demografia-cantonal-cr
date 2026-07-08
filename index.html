@@ -123,6 +123,7 @@ canvas{max-width:100%}
       <a href="#mapa">Mapa</a>
       <a href="#ranking">Ranking</a>
       <a href="#retos">Retos</a>
+      <a href="#riesgos">Riesgos</a>
       <a href="#quiz">Quiz</a>
     </div>
   </div>
@@ -434,10 +435,85 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
   </div>
 </section>
 
+<!-- ══ RIESGOS ══ -->
+<style>
+#riesgos{background:#F2EDE3}
+.risk-intro{display:grid;grid-template-columns:1.15fr 1fr;gap:18px;margin-top:34px;align-items:stretch}
+.risk-note{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.risk-note p{font-size:14.5px;color:var(--ink-2)}
+.risk-note p+p{margin-top:10px}
+.risk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+.rcard{background:#fff;border:1px solid var(--line);border-top:4px solid var(--rojo);border-radius:12px;padding:18px 18px 16px;display:flex;flex-direction:column}
+.rcard.creciente{border-top-color:var(--hito)}
+.rcard .sev{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--rojo);margin-bottom:8px}
+.rcard.creciente .sev{color:var(--hito)}
+.rcard h4{font-size:16.5px;font-weight:700;margin-bottom:7px;font-family:var(--disp)}
+.rcard p{font-size:13.5px;color:var(--muted);flex:1}
+.rcard .senal{font-family:var(--mono);font-size:12px;background:var(--paper);border:1px dashed var(--line);border-radius:8px;padding:8px 11px;margin:12px 0 10px;color:var(--ink-2)}
+.rcard .senal b{color:var(--rojo)}
+.rcard .horiz{font-family:var(--mono);font-size:11px;color:var(--muted)}
+@media(max-width:920px){.risk-grid{grid-template-columns:1fr 1fr}.risk-intro{grid-template-columns:1fr}}
+@media(max-width:560px){.risk-grid{grid-template-columns:1fr}}
+</style>
+<section id="riesgos">
+  <div class="wrap">
+    <div class="kicker" style="color:var(--rojo)">08 · Los riesgos en marcha</div>
+    <h2 class="sec-title">¿Qué está en juego si no nos preparamos?</h2>
+    <p class="sec-lead">El cambio demográfico ya está en marcha: no es un escenario hipotético, sino una trayectoria que los datos muestran año a año. El riesgo no es envejecer —eso es un logro—, sino llegar tarde a la transformación.</p>
+
+    <div class="risk-intro">
+      <div class="panel">
+        <h3>El reloj demográfico nacional</h3>
+        <div class="sub">Índice de dependencia (personas de 0–14 y 65+ por cada 100 de 15–64), con las tres etapas de la transición</div>
+        <div style="height:280px;position:relative"><canvas id="riskChart" role="img" aria-label="Índice de dependencia nacional 2020 a 2050 con etapas de la transición demográfica"></canvas></div>
+      </div>
+      <div class="risk-note">
+        <h3 style="font-size:16px;font-weight:700;margin-bottom:10px">Riesgo no es destino</h3>
+        <p>La dependencia primero <b>baja</b> —hay menos niños que mantener— y toca su mínimo hacia 2031. Ese es el último tramo de la <b>ventana demográfica</b>: la mejor oportunidad para ahorrar, invertir y reformar.</p>
+        <p>Después de <b>2032</b> —cuando por primera vez hay más personas mayores que niños— la curva cambia de dirección y la presión crece sin pausa: en 2050 cada 100 personas en edad de trabajar sostendrán a casi 58 dependientes, la mayoría personas mayores.</p>
+        <p>Los seis riesgos de abajo describen lo que ocurre si el país y sus cantones llegan a esa etapa <b>sin haberse preparado</b>. Todos son gestionables si se actúa durante esta década.</p>
+      </div>
+    </div>
+
+    <div class="risk-grid">
+      <div class="rcard"><div class="sev">● Presión alta</div>
+        <h4>Sostenibilidad de pensiones y salud</h4>
+        <p>Menos cotizantes por cada persona pensionada y un gasto en salud que crece con la edad de la población tensionan los regímenes de pensiones, el aseguramiento y los presupuestos públicos.</p>
+        <div class="senal">Señal: apoyo potencial <b>7,3 → 2,6</b> (2020→2050)</div>
+        <div class="horiz">Se intensifica: década de 2030 en adelante</div></div>
+      <div class="rcard"><div class="sev">● Presión alta</div>
+        <h4>Crisis de cuidados</h4>
+        <p>La población de 80 y más casi se quintuplica. Sin redes públicas de cuido, la carga recae en las familias —sobre todo en las mujeres—, reduciendo su participación laboral justo cuando más se necesita.</p>
+        <div class="senal">Señal: población 80+ de <b>105 mil → 468 mil</b> (+347%)</div>
+        <div class="horiz">Se intensifica: década de 2040</div></div>
+      <div class="rcard"><div class="sev">● Presión alta</div>
+        <h4>Espiral de despoblamiento</h4>
+        <p>En los cantones que pierden población, la salida de jóvenes reduce empleo, servicios y demanda local… lo que empuja a más jóvenes a irse. Un círculo vicioso que erosiona la base tributaria municipal.</p>
+        <div class="senal">Señal: <b>27 cantones</b> pierden población a 2050</div>
+        <div class="horiz">Ya en marcha en Coto Brus, Turrialba y Pérez Zeledón</div></div>
+      <div class="rcard creciente"><div class="sev">● Presión creciente</div>
+        <h4>Menor crecimiento económico potencial</h4>
+        <p>La fuerza laboral alcanza su máximo en 2034 y luego se reduce. Sin ganancias de productividad, formación técnica y mayor participación laboral, el crecimiento del país se desacelera.</p>
+        <div class="senal">Señal: pob. 15–64 <b>en máximo en 2034</b>, luego cae</div>
+        <div class="horiz">Se intensifica: mediados de la década de 2030</div></div>
+      <div class="rcard creciente"><div class="sev">● Presión creciente</div>
+        <h4>Infraestructura social desalineada</h4>
+        <p>Aulas que se vacían mientras faltan centros diurnos, servicios geriátricos y vivienda adaptada: el capital público queda invertido donde estaba la demanda de ayer, no la de mañana.</p>
+        <div class="senal">Señal: población infantil <b>−42%</b>; matrícula en contracción</div>
+        <div class="horiz">Ya visible; crítica en la década de 2030</div></div>
+      <div class="rcard creciente"><div class="sev">● Presión creciente</div>
+        <h4>Crecimiento desordenado donde sí hay expansión</h4>
+        <p>Los cantones que más crecen —costeros, fronterizos y turísticos— enfrentan presión sobre agua, suelo, vivienda y ecosistemas. Sin planificación, el dinamismo se convierte en congestión y exclusión.</p>
+        <div class="senal">Señal: Garabito <b>+63,5%</b>, Sarapiquí <b>+63,2%</b> a 2050</div>
+        <div class="horiz">Ya en marcha en zonas de expansión residencial y turística</div></div>
+    </div>
+  </div>
+</section>
+
 <!-- ══ QUIZ ══ -->
 <section style="background:#E9EEE7" id="quiz">
   <div class="wrap">
-    <div class="kicker">08 · Ponete a prueba</div>
+    <div class="kicker">09 · Ponete a prueba</div>
     <h2 class="sec-title" style="text-align:center">¿Cuánto aprendiste?</h2>
     <div class="quiz-box" id="quizBox"></div>
   </div>
@@ -446,7 +522,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 <!-- ══ MENSAJES ══ -->
 <section class="sec-dark" id="mensajes">
   <div class="wrap">
-    <div class="kicker">09 · Para llevar</div>
+    <div class="kicker">10 · Para llevar</div>
     <h2 class="sec-title" style="color:#fff">Seis mensajes clave</h2>
     <div class="claves">
       <div class="clave"><span class="num">M1</span><p>Costa Rica no enfrenta solo un cambio de tamaño poblacional: enfrenta un cambio profundo en su estructura por edades.</p></div>
@@ -610,7 +686,7 @@ function makePlayer(sliderId,btnId,onYear){
       const y=+sl.value+1;
       if(y>2050){stop();return;}
       setYear(y);
-    },130);
+    },300);
   };
   bt.addEventListener('click',()=>timer?stop():play());
   sl.addEventListener('input',()=>{stop();onYear(+sl.value);});
@@ -984,6 +1060,46 @@ function renderQuiz(){
   }));
 }
 renderQuiz();
+
+/* ═══ RIESGOS: reloj demográfico ═══ */
+const ZONES=[
+ {y0:2020,y1:2031,c:C.joven,l:'Ventana abierta'},
+ {y0:2032,y1:2039,c:C.hito,l:'La ventana se cierra'},
+ {y0:2040,y1:2050,c:C.rojo,l:'Presión alta'}
+];
+const zonePlugin={id:'zones',beforeDatasetsDraw(ch){
+  const{ctx,chartArea:a,scales:{x}}=ch;
+  const px=y=>x.getPixelForValue(y-2020);
+  const half=(px(2021)-px(2020))/2;
+  ctx.save();
+  ZONES.forEach(z=>{
+    const x0=Math.max(a.left,px(z.y0)-half), x1=Math.min(a.right,px(z.y1)+half);
+    ctx.fillStyle=z.c+'15';
+    ctx.fillRect(x0,a.top,x1-x0,a.bottom-a.top);
+    ctx.fillStyle=z.c;
+    ctx.font='600 10.5px "IBM Plex Mono"';
+    ctx.textAlign='center';
+    ctx.fillText(z.l,(x0+x1)/2,a.top+14);
+  });
+  const x32=px(2032);
+  ctx.strokeStyle='rgba(18,46,43,.45)';ctx.setLineDash([5,4]);ctx.lineWidth=1.2;
+  ctx.beginPath();ctx.moveTo(x32,a.top+22);ctx.lineTo(x32,a.bottom);ctx.stroke();
+  ctx.setLineDash([]);
+  ctx.fillStyle='rgba(18,46,43,.6)';ctx.textAlign='left';
+  ctx.fillText('2032: más mayores que niños',x32+6,a.top+34);
+  ctx.restore();
+}};
+new Chart($('#riskChart'),{type:'line',
+ data:{labels:yrs,datasets:[{label:'Índice de dependencia',
+   data:yrs.map((y,i)=>pct(cr.a[i]+cr.c[i],cr.b[i])),
+   borderColor:C.ink,pointRadius:0,tension:.3,borderWidth:3,
+   fill:false}]},
+ options:{responsive:true,maintainAspectRatio:false,
+  plugins:{legend:{display:false},
+   tooltip:{callbacks:{label:it=>' Dependencia: '+fmt1(it.parsed.y)+' por cada 100 en edad de trabajar'}}},
+  scales:{x:{grid:{display:false},ticks:{font:{family:'"IBM Plex Mono"',size:10},maxTicksLimit:7}},
+          y:{min:38,max:62,ticks:{font:{family:'"IBM Plex Mono"',size:10}},grid:{color:'rgba(18,46,43,.06)'}}}},
+ plugins:[zonePlugin]});
 
 </script>
 </body>
